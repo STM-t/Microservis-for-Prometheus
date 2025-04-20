@@ -7,7 +7,7 @@
 
 - Для раскатки этого сервиса используется Ansible и Vagrant. 
 
-- Гипервизор 2-го типа - virt-manager(libvirt)
+- Гипервизор 2-го типа - virt-manager (libvirt)
 
 - ОС для ВМ - AlmaLinux 9
 
