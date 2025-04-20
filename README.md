@@ -1,13 +1,14 @@
-# Microservis-for-Prometheus
-This is Python microservis which collect metrics from your system and show it in Prometheus format. Also it detect type host where you are running this microservis (physical server, VM or container))
-
 # Развертывание микросервиса с помощью Ansible и Vagrant
 
-Этот Python-микросервиис собирает Prometheus метрики. Для раскатки этого сервиса используется Ansible и Vagrant. 
+- Этот Python-микросервиис собирает Prometheus метрики, определяет тип хоста, на котором запущен микросервис.
+- ВМ AlmaLinux9 можно создать с помощью Vagrant
+- Файл main.py вместе с requirmets.txt доаствляются на виртуальную машину, собирается в Docker-контейнер с помощью Ansible и запускается, есть возможность запустить контейнер прямо из ВМ с скриптом start_microservice.sh при наличии Dockerfile, main.py и requirements.txt
 
-Гипервизор 2-го типа - virt-manager(libvirt)
+- Для раскатки этого сервиса используется Ansible и Vagrant. 
 
-ОС для ВМ - AlmaLinux 9
+- Гипервизор 2-го типа - virt-manager(libvirt)
+
+- ОС для ВМ - AlmaLinux 9
 
 ## Струкутра проекта
 
