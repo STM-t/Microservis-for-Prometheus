@@ -2,7 +2,8 @@
 
 - Этот Python-микросервиис собирает Prometheus метрики, определяет тип хоста, на котором запущен микросервис.
 - ВМ AlmaLinux9 можно создать с помощью Vagrant
-- Файл main.py вместе с requirmets.txt доаствляются на виртуальную машину, собирается в Docker-контейнер с помощью Ansible и запускается, есть возможность запустить контейнер прямо из ВМ с скриптом start_microservice.sh при наличии Dockerfile, main.py и requirements.txt
+- Файл main.py вместе с requirmets.txt доставляются на виртуальную машину с помощью Ansible, собирается в Docker-контейнер и запускается
+- Есть возможность запустить контейнер прямо из ВМ с скриптом start_microservice.sh при наличии Dockerfile, main.py и requirements.txt
 
 - Для раскатки этого сервиса используется Ansible и Vagrant. 
 
