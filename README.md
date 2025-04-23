@@ -54,6 +54,8 @@
    ```
    
 2. Установка Vagrant:
+
+   Если возникают проблемы с установкой Vagrant (плагинов или боксов) используйте VPN, например AdGuardVPN с бесплатной версией - https://adguardaccount.net
   
    ```
    sudo apt install vagrant
