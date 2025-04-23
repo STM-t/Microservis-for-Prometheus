@@ -53,13 +53,13 @@
    sudo apt install virt-manager qemu-kvm libvirt-daemon-system libvirt-clients
    ```
    
-3. Установка Vagrant:
+2. Установка Vagrant:
   
    ```
    sudo apt install vagrant
    ```
    
-5. Установка libvirt плагина для Vagrant:
+3. Установка libvirt плагина для Vagrant:
   
    ```
    vagrant plugin install vagrant-libvirt
@@ -71,7 +71,7 @@
    vagrant box add generic/alma9
    ```
    
-6. Запуск ВМ:
+5. Запуск ВМ:
   
    ```
    cd vagrant
@@ -86,13 +86,13 @@
    sudo apt install ansible
    ```
    
-3. Генерация SSH ключа:
+2. Генерация SSH ключа:
   
    ```
    ssh-keygen
    ```
    
-5. Copy SSH key to the VM (password is "password"):
+3. Copy SSH key to the VM (password is "password"):
   
    ```
    ssh-copy-id stm@<VM_IP>
@@ -100,7 +100,7 @@
 
 Пароль по умолчанию:_password_, он может быть изменен в Vagranfile
    
-7. Запуск Ansible playbook:
+4. Запуск Ansible playbook:
   
    ```
    cd ansible
@@ -118,7 +118,7 @@
    ssh stm@<VM_IP>
    ```
    
-3. Метрики с микросервиса:
+2. Метрики с микросервиса:
   
    ```
    curl http://localhost:8080
