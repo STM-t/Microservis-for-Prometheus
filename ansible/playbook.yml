@@ -3,7 +3,7 @@
   hosts: almalinux
   become: yes
   gather_facts: yes
-
+ 
   roles:
     - microservice
 ...
