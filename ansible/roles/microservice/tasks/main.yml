@@ -6,7 +6,7 @@
     path: "/opt/microservice"
     state: directory
     mode: '0755'
-
+   
 - name: Copy main.py
   copy:
     src: "main.py"
