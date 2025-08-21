@@ -7,7 +7,7 @@ HOST_TYPE = Info('host_type', 'Тип хоста сервера', ['type'])
 CPU_USAGE = Gauge('cpu_usage_percent', 'Использование CPU в процентах')
 MEMORY_USAGE = Gauge('memory_usage_percent', 'Использование RAM в процентах')
   
-
+  
 REGISTRY.unregister(REGISTRY._names_to_collectors['python_gc_objects_collected_total'])
 REGISTRY.unregister(REGISTRY._names_to_collectors['python_info'])
 
