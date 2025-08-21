@@ -11,7 +11,7 @@ MEMORY_USAGE = Gauge('memory_usage_percent', 'Использование RAM в 
 REGISTRY.unregister(REGISTRY._names_to_collectors['python_gc_objects_collected_total'])
 REGISTRY.unregister(REGISTRY._names_to_collectors['python_info'])
 
-
+   
 
 def detect_host_type():
     if os.path.exists('/.dockerenv') or os.environ.get('KUBERNETES_SERVICE_HOST'):
