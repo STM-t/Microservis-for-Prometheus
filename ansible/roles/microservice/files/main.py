@@ -13,7 +13,7 @@ REGISTRY.unregister(REGISTRY._names_to_collectors['python_info'])
    
    
 
-def detect_host_type():
+def get_host_type():
     if os.path.exists('/.dockerenv') or os.environ.get('KUBERNETES_SERVICE_HOST'):
         return 'container'
     
@@ -37,7 +37,7 @@ def detect_host_type():
     return 'physical_server'
 
 def update_metrics():
-    host_type = detect_host_type()
+    host_type = get_host_type()
     HOST_TYPE.labels(type=host_type)
     
     CPU_USAGE.set(psutil.cpu_percent())
