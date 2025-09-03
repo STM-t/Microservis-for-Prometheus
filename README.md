@@ -50,7 +50,7 @@
 1. Устновка virt-manager:
   
    ```
-   sudo apt install virt-manager qemu-kvm libvirt-daemon-system libvirt-clients
+   sudo dnf install virt-manager qemu-kvm libvirt-daemon-system libvirt-clients
    ```
    
 2. Установка Vagrant:
@@ -58,7 +58,7 @@
    Если возникают проблемы с установкой Vagrant (плагинов или боксов) используйте VPN, например AdGuardVPN с бесплатной версией - https://adguardaccount.net
   
    ```
-   sudo apt install vagrant
+   sudo dnf install vagrant
    ```
    
 3. Установка libvirt плагина для Vagrant:
@@ -85,7 +85,7 @@
 1. Установка Ansible:
   
    ```
-   sudo apt install ansible
+   sudo dnf install ansible
    ```
    
 2. Генерация SSH ключа:
