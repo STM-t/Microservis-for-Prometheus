@@ -6,7 +6,7 @@
 - Есть возможность запустить контейнер прямо из ВМ с скриптом start_microservice.sh при наличии Dockerfile, main.py и requirements.txt
   
 - Для раскатки этого сервиса используется Ansible и Vagrant   
-
+ 
 - Гипервизор 2-го типа: virt-manager (libvirt)
   
 - ОС для ВМ - AlmaLinux 9
