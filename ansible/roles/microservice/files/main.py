@@ -21,6 +21,7 @@ def safe_unregister(metric_name):
     if collector:
         REGISTRY.unregister(collector)
 
+
 safe_unregister('python_gc_objects_collected_total')
 safe_unregister('python_info')
    
@@ -49,17 +50,22 @@ def get_host_type():
     
     return 'physical_server'
 
-def update_metrics():
+
+def setup_static_metrics():
     host_type = get_host_type()
     HOST_TYPE.labels(type=host_type)
-    
+
+
+def update_dynamic_metrics():
     CPU_USAGE.set(psutil.cpu_percent())
     MEMORY_USAGE.set(psutil.virtual_memory().percent)
 
+
 if __name__ == '__main__':
+    setup_static_metrics()
     start_http_server(8080)
     print("Сервер метрик запущен на http://localhost:8080/metrics")
     
     while True:
-        update_metrics()
+        update_dynamic_metrics()
         time.sleep(5)
