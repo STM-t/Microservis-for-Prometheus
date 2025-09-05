@@ -2,7 +2,7 @@ from prometheus_client import start_http_server, REGISTRY, Info, Gauge
 import os
 import time
 import psutil
-    
+     
 HOST_TYPE = Info('host_type', 'Тип хоста сервера', ['type'])
 CPU_USAGE = Gauge('cpu_usage_percent', 'Использование CPU в процентах')
 MEMORY_USAGE = Gauge('memory_usage_percent', 'Использование RAM в процентах')
