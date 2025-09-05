@@ -1,6 +1,6 @@
 # Используем официальный образ Python
 FROM python:3.9-slim
-  
+
 # Устанавливаем системные зависимости (если нужны)
 #RUN apt-get update && apt-get install -y --no-install-recommends \
 #    gcc \
@@ -10,7 +10,7 @@ FROM python:3.9-slim
 # Копируем код и зависимости
 WORKDIR /app
 COPY . .
-   
+
 # Устанавливаем Python-зависимости
 RUN pip install -r requirements.txt
 
