@@ -16,6 +16,6 @@ RUN pip install -r requirements.txt
 
 # Открываем порт для Prometheus
 EXPOSE 8080
- 
+
 # Запускаем приложение
 CMD ["python3", "main.py"]
