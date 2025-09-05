@@ -12,7 +12,7 @@ MEMORY_USAGE = Gauge('memory_usage_percent', 'Использование RAM в 
 # REGISTRY.unregister(REGISTRY._names_to_collectors['python_gc_objects_collected_total'])
 # REGISTRY.unregister(REGISTRY._names_to_collectors['python_info'])
 
-
+  
 # Вместо старой конструкции ⬆, добавлена функция безопасного удаления лишних питоновских метрик ⬇
 
 
