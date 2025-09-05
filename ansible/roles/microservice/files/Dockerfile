@@ -6,7 +6,7 @@ FROM python:3.9-slim
 #    gcc \
 #   python3-dev \
 #    && rm -rf /var/lib/apt/lists/*
- 
+
 # Копируем код и зависимости
 WORKDIR /app
 COPY . .
