@@ -1,4 +1,4 @@
- from prometheus_client import start_http_server, REGISTRY, Info, Gauge
+from prometheus_client import start_http_server, REGISTRY, Info, Gauge
 import os
 import time
 import psutil
