@@ -36,13 +36,12 @@
 
 ## Используемый стек
 
-- Fedora 41
-- QEMU/KVM virtualization
-- virt-manager
-- Vagrant
-- Ansible
-- Docker
-- Python
+- **Fedora 41** - хостовая ОС
+- **Vagrant + Libvirt** - создание виртуальной машины
+- **Ansible** - конфигурация и оркестрация
+- **Docker** - контейнеризация приложения
+- **Systemd** - управление сервисом на уровне ОС
+- **Python** - ЯП микросервиса
 
 ## Шаги развертывания
 
