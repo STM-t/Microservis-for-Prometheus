@@ -1,35 +1,40 @@
 # Запускается после main.yml, проверяет докер, собирает Image, проверяет, стартует контейнер  
 ---
-
-- name: Testing that Docker is running
-  service:
+- name: Ensure Docker is running and enabled
+  systemd:
     name: docker
     state: started
     enabled: yes
 
 - name: Build Docker image
-  command: docker build -t microservice /opt/microservice
-  args:
-    removes: "/opt/microservice/Dockerfile"
+  community.docker.docker_image:
+    name: "microservice:latest"
+    build:
+      path: "/opt/microservice"
+    source: build
+  register: image_build
 
-- name: Verify Docker image exists
-  command: docker images -q microservice
-  register: image_check
-  ignore_errors: yes
-  changed_when: false
+- name: Create systemd service directory
+  file:
+    path: /etc/systemd/system
+    state: directory
+    mode: '0755'
 
-- name: Debug image check
-  debug:
-    var: image_check.stdout
+- name: Deploy systemd service file
+  template:
+    src: "templates/microservice.service.j2"
+    dest: "/etc/systemd/system/microservice.service"
+    owner: root
+    group: root
+    mode: '0644'
+  notify: reload systemd
 
-- name: Run microservice container
-  command: |
-    docker run -d \
-      --name microservice \
-      -p 8080:8080 \
-      -v /opt/microservice:/app \
-      --restart unless-stopped \
-      microservice
-  when: image_check.stdout != ""
+- name: Ensure systemd daemon is reloaded
+  systemd:
+    daemon_reload: yes
 
-...
+- name: Enable and start microservice
+  systemd:
+    name: microservice
+    state: started
+    enabled: yes
