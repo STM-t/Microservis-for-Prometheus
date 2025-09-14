@@ -1,4 +1,4 @@
-
+# Запускается после main.yml, проверяет докер, собирает Image, проверяет, стартует контейнер  
 ---
 
 - name: Testing that Docker is running
