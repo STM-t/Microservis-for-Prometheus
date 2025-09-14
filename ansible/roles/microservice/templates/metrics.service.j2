@@ -1,28 +1,12 @@
 [Unit]
-Description=Microservice Docker Container
-Documentation=https://github.com/your-repo
-After=docker.service network.target
-Requires=docker.service
+Description=Microservice Container
+After=docker.service
 
 [Service]
 Type=simple
 Restart=always
-RestartSec=10
-ExecStartPre=-/usr/bin/docker rm -f microservice
-ExecStart=/usr/bin/docker run \
-    --name=microservice \
-    -p 8080:8080 \
-    -v /opt/microservice:/app \
-    --restart=no \
-    microservice:latest
-
+ExecStart=/usr/bin/docker run --rm --name=microservice -p 8080:8080 -v /opt/microservice:/app microservice:latest
 ExecStop=/usr/bin/docker stop microservice
-ExecStopPost=-/usr/bin/docker rm microservice
-
-# Logging configuration
-StandardOutput=journal
-StandardError=journal
-Environment=PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
 [Install]
 WantedBy=multi-user.target
