@@ -29,7 +29,9 @@
             │    ├── docker-setup.yml
             │    └── main.yml
             └── templates/
-                 └── metrics.service.j2 
+            │    └── metrics.service.j2
+            └── handlers/
+                └── main.yml
 ```
 
 ## Используемый стек
