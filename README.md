@@ -28,9 +28,11 @@
             │   ├── main.py
             │   ├── requirements.txt
             │   └── start_microservice.sh
-            └── tasks/
-                ├── docker-setup.yml
-                └── main.yml
+            ├── tasks/
+            │    ├── docker-setup.yml
+            │    └── main.yml
+            └── templates/
+                 └── metrics.service.j2 
 ```
 
 ## Используемый стек
