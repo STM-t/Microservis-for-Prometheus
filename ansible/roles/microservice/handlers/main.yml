@@ -1,0 +1,14 @@
+---
+
+- name: reload systemd
+  systemd:
+    daemon_reload: yes
+  listen: "reload systemd"
+
+- name: restart microservice
+  systemd:
+    name: microservice
+    state: restarted
+  listen: "restart microservice"
+
+...
